@@ -19,6 +19,6 @@
     "nodemon": "^3.1.4"
   },
   "dependencies": {
-    "mysql2": "^3.11.0"
+    "mongoose": "^8.5.4"
   }
 }
