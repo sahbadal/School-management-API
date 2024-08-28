@@ -30,7 +30,7 @@ const studentSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    GPA: {
+    SGPA: {
         type: Number,
         min: 0,
         max: 4,
