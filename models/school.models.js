@@ -1,55 +1,52 @@
+// models/school.models.js
 import mongoose from 'mongoose';
 
 const studentSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: true,
+        required: true
     },
     lastName: {
         type: String,
-        required: true,
+        required: true
     },
     email: {
         type: String,
         required: true,
-        unique: true,
+        unique: true
     },
     phoneNumber: {
         type: String,
-        required: true,
+        required: true
     },
     address: {
         type: String,
-        required: true,
+        required: true
     },
     dateOfBirth: {
         type: Date,
-        required: true,
-    },
-    enrollmentDate: {
-        type: Date,
-        default: Date.now,
+        required: true
     },
     SGPA: {
         type: Number,
+        required: true,
         min: 0,
-        max: 4,
+        max: 10 // Max SGPA updated to 10
     },
     status: {
         type: String,
-        enum: ['Active', 'Inactive', 'Graduated'],
-        default: 'Active',
+        enum: ['Enrolled', 'Graduated', 'Dropped'],
+        required: true
     },
     courses: [
         {
-            courseName: String,
-            grade: String,
+            type: String
         }
-    ],
+    ], // Array of strings for courses
     completeYear: {
-        type: String, 
-        required: true,
-    },
+        type: Number,
+        required: true
+    }
 });
 
 const Student = mongoose.model('Student', studentSchema);
